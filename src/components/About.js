@@ -4,6 +4,7 @@ import action from '../store/action';
 
 class About extends Component {
   constructor(props) {
+    console.log(props, '参数')
     super(props);
     this.state = {  }
   }
@@ -12,13 +13,14 @@ class About extends Component {
       <div>
         {this.props.number}
         <button onClick={() => this.props.increment()}>+</button>
+        <button onClick={() => this.props.goHome()}>Home</button>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {number: state.number}
+  return {number: state.counter.number}
 }
 
 export default connect(mapStateToProps, action)(About);
